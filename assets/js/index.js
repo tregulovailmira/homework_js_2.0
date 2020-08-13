@@ -152,3 +152,42 @@ function getDecadeOfMonth(day) {
         default: return 'Unknown value';
     }
 };
+
+/*Таски на циклы (Only FOR)
+1) Вывести факториал запрошенного числа.*/
+
+console.log(`Factorial: ${calcFactorial(5)}`);
+function calcFactorial(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+};
+
+/*2) вычислить сумму первых N элементов последовательности 1 + 1/2 + 1/3 + ...+ 1/N . параметр N задает пользователь*/
+
+const n = Number(prompt('Enter n:'));
+console.log(calcSumOfSequenceOfElements(n));
+function calcSumOfSequenceOfElements(n){
+    if (isNaN(n)) {
+        return 'Invalid value';
+    };
+    let result = 0;
+    for (let i = 1; i <= n; i++) {
+        result += 1 / i;
+    }
+    return `The sum of sequence of elements: ${result}`;
+};
+
+/*3) Найти произведение чисел в пределах от lim1 до lim2 (например, если lim1=5 и lim2=12 то это произведение
+всех чисел от 5 до 12). */
+
+console.log(`The product of range: ${calcProductOfRange(5, 12)}`);
+function calcProductOfRange (lim1, lim2) {
+    let result = 1;
+    for (let i = lim1; i <= lim2; i++) {
+        result *= i;
+    }
+    return result;
+};
