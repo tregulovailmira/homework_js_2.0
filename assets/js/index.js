@@ -260,3 +260,64 @@ const education = {
     departmentPhoneNumber: 543295943,
 };
 console.log('Education: ', education);
+
+// 2.1 Создать числовой массив и проинициализировать его
+
+const array = [1, 0, 3, 4, 5, 0, 7 , 8, 0, 0];
+
+// 2.1* (усложненное) инициализация с помощью случайных чисел
+
+const randomArray = new Array(10);
+console.log('Random array: ', arrayInitialization(randomArray));
+function arrayInitialization (array) {
+    for (i = 0; i < array.length; i++) {
+        array[i] = Math.floor(Math.random()*100);
+    }
+    return array;
+};
+
+const randomArray2 = [];
+console.log('Random array: ', arrayPushInitialization(randomArray2));
+function arrayPushInitialization(array) {
+    for (i = 0; i < 10; i++) {
+        array.push(Math.floor(Math.random()*100));
+    }
+    return array;
+};
+
+// 2.2 Вывести размер массива
+
+console.log(`Array length: ${randomArray.length}`);
+
+// 2.3 Вывести элементы с четными индексами
+
+for(i = 0; i < randomArray.length; i++) {
+    if (i % 2 === 0) {
+        console.log('i: ', i, 'item: ', randomArray[i]);
+    }
+}
+
+// 2.4 Вывести только четные элементы (четные числа делятся на 2 без остатка)
+
+for(i = 0; i < randomArray.length; i++) {
+    if (randomArray[i] % 2 === 0) {
+        console.log(randomArray[i]);
+    }
+}
+// 2.5 Вывести индексы нулевых элементов (элемент равен нулю)
+
+for(i = 0; i < array.length; i++) {
+    if (array[i] === 0) {
+        console.log(i);
+    }
+}
+
+// 2.6 Подсчитать количество нулевых элементов
+
+let sum = 0;
+for(i = 0; i < array.length; i++) {
+    if (array[i] === 0) {
+        sum++;
+    }
+}
+console.log(`Amount of zero elements: ${sum}`);
