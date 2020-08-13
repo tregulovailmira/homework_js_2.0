@@ -191,3 +191,48 @@ function calcProductOfRange (lim1, lim2) {
     }
     return result;
 };
+/*Таски на функции
+1) Функция которая запрашивает число и проверяет простое ли оно
+(простое число делится без остатка на себя и на единицу)*/
+
+console.log(`Is this number a simple? ${isSimple()}`);
+function isSimple() {
+    const number = Number(prompt('Enter simple number:')); //prompt внутри функции, т.к. в задании указано "Функция которая запрашивает число.."
+    if (isNaN(number)) {
+        return 'Invalid value';
+    };
+    for(let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+};
+
+/*2) Создать функцию checkMultiplicity, которая принимает два числа и проверяет кратность первого вторым:
+checkMultiplicity(25, 5) // true
+checkMultiplicity(15, 3) // true
+checkMultiplicity(15, 5) // true
+checkMultiplicity(15, 4) // false*/
+
+const checkMultiplicity = (dividend, divider) => (dividend % divider === 0);
+
+console.log(checkMultiplicity(25, 5));
+console.log(checkMultiplicity(15, 3));
+console.log(checkMultiplicity(15, 5));
+console.log(checkMultiplicity(15, 4));
+
+/*3) Проверка возможности треугольника. Создать функцию которая принимает длины треугольника; функция возвращает
+true если треугольник возможен и false если нет*/
+
+const checkTriangle = (a, b, c) => ((a + b > c) && (b + c > a) && (a + c > b));
+console.log(`The possibility of triangle: ${checkTriangle(10, 10, 10)}`);
+
+
+/*4) Написать функции расчета площадей (поверхности) следующих фигур/тел:  треугольника, прямоугольника*/
+
+const calcTriangleSquare = (base, height) => square = 1/2*base*height;
+console.log(`Triangle square: ${calcTriangleSquare(15, 8)}`);
+
+const calcRectangleleSquare = (sideA, sideB) => square = sideA * sideB;
+console.log(`Rectangle square: ${calcRectangleleSquare(15, 8)}`);
