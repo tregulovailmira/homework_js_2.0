@@ -321,3 +321,28 @@ for(i = 0; i < array.length; i++) {
     }
 }
 console.log(`Amount of zero elements: ${sum}`);
+
+/*3.1 Создать функции-конструкторы:
+- Книга (автор, название, год издания, издательство)
+- Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)*/
+
+function Book (author, name, yearOfPublishing, publishingHouse) {
+    this.author = author;
+    this.name = name;
+    this.yearOfPublishing = yearOfPublishing;
+    this.publishingHouse = publishingHouse;
+}
+
+function ElectronicVersionOfBook (author, name, yearOfPublishing, publishingHouse, format, electronicNumber) {
+    this.author = author;
+    this.name = name;
+    this.yearOfPublishing = yearOfPublishing;
+    this.publishingHouse = publishingHouse;
+    this.format = format;
+    this.electronicNumber = electronicNumber;
+}
+
+const fantasticBook = new Book('B.Werber', 'The imperium of angels', '2011', 'Ripol');
+const fantasticBookElectronic = new ElectronicVersionOfBook('B.Werber', 'The imperium of angels', '2011', 'Ripol', 'electronic', 123456);
+console.log(fantasticBook);
+console.log(fantasticBookElectronic);
