@@ -346,3 +346,50 @@ const fantasticBook = new Book('B.Werber', 'The imperium of angels', '2011', 'Ri
 const fantasticBookElectronic = new ElectronicVersionOfBook('B.Werber', 'The imperium of angels', '2011', 'Ripol', 'electronic', 123456);
 console.log(fantasticBook);
 console.log(fantasticBookElectronic);
+
+/*4 Дописать функцию конструктор MyArray.
+    Должны быть реализованы следующие методы: push,pop,forEach*/
+
+function MyArray() {
+    this.length = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        this[this.length] = arguments[i];
+        this.length++;
+    };
+};
+
+function ArrayMethods() {
+    this.pop = function () {
+        let lastElement = this[this.length-1];
+        delete this[this.length-1];
+        this.length = this.length - 1;
+        return lastElement;
+    };
+
+    this.push = function () {
+        for (let i = 0; i < arguments.length; i++) {
+            this[this.length] = arguments[i];
+            this.length++;
+        }
+        return this.length;
+    };
+
+    this.forEach = function (callback, thisArg = this) {
+        for(let i = 0; i < thisArg.length; i++) {
+            callback(thisArg[i], i, thisArg);
+        }
+    }
+};
+
+MyArray.prototype = new ArrayMethods();
+
+const myArr = new MyArray('11', '22', '33', '44', '55');
+console.log(myArr);
+console.log(myArr.pop());
+console.log(myArr);
+console.log(myArr.push(2,2,2,2));
+console.log(myArr);
+myArr.forEach(function (item, i, arr) {
+    arr[i]+=10;
+});
+console.log(myArr);
