@@ -236,3 +236,27 @@ console.log(`Triangle square: ${calcTriangleSquare(15, 8)}`);
 
 const calcRectangleleSquare = (sideA, sideB) => square = sideA * sideB;
 console.log(`Rectangle square: ${calcRectangleleSquare(15, 8)}`);
+
+/*Таски на объекты
+1.1 создать объект Student который содержит следующие свойства: имя, фамилию, пол, контактные данные.*/
+
+const student = {
+    name: 'Mike',
+    surname: 'Simpson',
+    gender: 'male',
+    email: 'mikesimpson@gmail.com',
+    phoneNumber: 1234556789,
+};
+console.log('Student: ', student);
+
+//1.2 создать объект, который содержит свойства, о факультете и кафедре.
+
+const education = {
+    facultyName: 'Metallurgy',
+    deanName: 'Robert Zane',
+    facultyPhoneNumber: 1234567458,
+    department: 'Ferrous metallurgy',
+    chiefOfDepartment: 'Mike Ross',
+    departmentPhoneNumber: 543295943,
+};
+console.log('Education: ', education);
